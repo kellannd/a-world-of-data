@@ -1,0 +1,718 @@
+[
+ {
+   "Entity": "Afghanistan",
+   "Code": "AFG"
+ },
+ {
+   "Entity": "Africa",
+   "Code": ""
+ },
+ {
+   "Entity": "Albania",
+   "Code": "ALB"
+ },
+ {
+   "Entity": "Algeria",
+   "Code": "DZA"
+ },
+ {
+   "Entity": "Angola",
+   "Code": "AGO"
+ },
+ {
+   "Entity": "Argentina",
+   "Code": "ARG"
+ },
+ {
+   "Entity": "Armenia",
+   "Code": "ARM"
+ },
+ {
+   "Entity": "Asia",
+   "Code": ""
+ },
+ {
+   "Entity": "Australia",
+   "Code": "AUS"
+ },
+ {
+   "Entity": "Austria",
+   "Code": "AUT"
+ },
+ {
+   "Entity": "Azerbaijan",
+   "Code": "AZE"
+ },
+ {
+   "Entity": "Bahrain",
+   "Code": "BHR"
+ },
+ {
+   "Entity": "Bangladesh",
+   "Code": "BGD"
+ },
+ {
+   "Entity": "Barbados",
+   "Code": "BRB"
+ },
+ {
+   "Entity": "Belarus",
+   "Code": "BLR"
+ },
+ {
+   "Entity": "Belgium",
+   "Code": "BEL"
+ },
+ {
+   "Entity": "Benin",
+   "Code": "BEN"
+ },
+ {
+   "Entity": "Bhutan",
+   "Code": "BTN"
+ },
+ {
+   "Entity": "Bolivia",
+   "Code": "BOL"
+ },
+ {
+   "Entity": "Bosnia and Herzegovina",
+   "Code": "BIH"
+ },
+ {
+   "Entity": "Botswana",
+   "Code": "BWA"
+ },
+ {
+   "Entity": "Brazil",
+   "Code": "BRA"
+ },
+ {
+   "Entity": "Bulgaria",
+   "Code": "BGR"
+ },
+ {
+   "Entity": "Burkina Faso",
+   "Code": "BFA"
+ },
+ {
+   "Entity": "Burundi",
+   "Code": "BDI"
+ },
+ {
+   "Entity": "Cambodia",
+   "Code": "KHM"
+ },
+ {
+   "Entity": "Cameroon",
+   "Code": "CMR"
+ },
+ {
+   "Entity": "Canada",
+   "Code": "CAN"
+ },
+ {
+   "Entity": "Cape Verde",
+   "Code": "CPV"
+ },
+ {
+   "Entity": "Central African Republic",
+   "Code": "CAF"
+ },
+ {
+   "Entity": "Chad",
+   "Code": "TCD"
+ },
+ {
+   "Entity": "Chile",
+   "Code": "CHL"
+ },
+ {
+   "Entity": "China",
+   "Code": "CHN"
+ },
+ {
+   "Entity": "Colombia",
+   "Code": "COL"
+ },
+ {
+   "Entity": "Comoros",
+   "Code": "COM"
+ },
+ {
+   "Entity": "Congo",
+   "Code": "COG"
+ },
+ {
+   "Entity": "Costa Rica",
+   "Code": "CRI"
+ },
+ {
+   "Entity": "Cote d'Ivoire",
+   "Code": "CIV"
+ },
+ {
+   "Entity": "Croatia",
+   "Code": "HRV"
+ },
+ {
+   "Entity": "Cuba",
+   "Code": "CUB"
+ },
+ {
+   "Entity": "Cyprus",
+   "Code": "CYP"
+ },
+ {
+   "Entity": "Czechia",
+   "Code": "CZE"
+ },
+ {
+   "Entity": "Democratic Republic of Congo",
+   "Code": "COD"
+ },
+ {
+   "Entity": "Denmark",
+   "Code": "DNK"
+ },
+ {
+   "Entity": "Djibouti",
+   "Code": "DJI"
+ },
+ {
+   "Entity": "Dominican Republic",
+   "Code": "DOM"
+ },
+ {
+   "Entity": "East Timor",
+   "Code": "TLS"
+ },
+ {
+   "Entity": "Ecuador",
+   "Code": "ECU"
+ },
+ {
+   "Entity": "Egypt",
+   "Code": "EGY"
+ },
+ {
+   "Entity": "El Salvador",
+   "Code": "SLV"
+ },
+ {
+   "Entity": "Equatorial Guinea",
+   "Code": "GNQ"
+ },
+ {
+   "Entity": "Eritrea",
+   "Code": "ERI"
+ },
+ {
+   "Entity": "Estonia",
+   "Code": "EST"
+ },
+ {
+   "Entity": "Eswatini",
+   "Code": "SWZ"
+ },
+ {
+   "Entity": "Ethiopia",
+   "Code": "ETH"
+ },
+ {
+   "Entity": "Europe",
+   "Code": ""
+ },
+ {
+   "Entity": "Fiji",
+   "Code": "FJI"
+ },
+ {
+   "Entity": "Finland",
+   "Code": "FIN"
+ },
+ {
+   "Entity": "France",
+   "Code": "FRA"
+ },
+ {
+   "Entity": "Gabon",
+   "Code": "GAB"
+ },
+ {
+   "Entity": "Gambia",
+   "Code": "GMB"
+ },
+ {
+   "Entity": "Georgia",
+   "Code": "GEO"
+ },
+ {
+   "Entity": "Germany",
+   "Code": "DEU"
+ },
+ {
+   "Entity": "Ghana",
+   "Code": "GHA"
+ },
+ {
+   "Entity": "Greece",
+   "Code": "GRC"
+ },
+ {
+   "Entity": "Guatemala",
+   "Code": "GTM"
+ },
+ {
+   "Entity": "Guinea",
+   "Code": "GIN"
+ },
+ {
+   "Entity": "Guinea-Bissau",
+   "Code": "GNB"
+ },
+ {
+   "Entity": "Guyana",
+   "Code": "GUY"
+ },
+ {
+   "Entity": "Haiti",
+   "Code": "HTI"
+ },
+ {
+   "Entity": "Honduras",
+   "Code": "HND"
+ },
+ {
+   "Entity": "Hungary",
+   "Code": "HUN"
+ },
+ {
+   "Entity": "Iceland",
+   "Code": "ISL"
+ },
+ {
+   "Entity": "India",
+   "Code": "IND"
+ },
+ {
+   "Entity": "Indonesia",
+   "Code": "IDN"
+ },
+ {
+   "Entity": "Iran",
+   "Code": "IRN"
+ },
+ {
+   "Entity": "Iraq",
+   "Code": "IRQ"
+ },
+ {
+   "Entity": "Ireland",
+   "Code": "IRL"
+ },
+ {
+   "Entity": "Israel",
+   "Code": "ISR"
+ },
+ {
+   "Entity": "Italy",
+   "Code": "ITA"
+ },
+ {
+   "Entity": "Jamaica",
+   "Code": "JAM"
+ },
+ {
+   "Entity": "Japan",
+   "Code": "JPN"
+ },
+ {
+   "Entity": "Jordan",
+   "Code": "JOR"
+ },
+ {
+   "Entity": "Kazakhstan",
+   "Code": "KAZ"
+ },
+ {
+   "Entity": "Kenya",
+   "Code": "KEN"
+ },
+ {
+   "Entity": "Kuwait",
+   "Code": "KWT"
+ },
+ {
+   "Entity": "Kyrgyzstan",
+   "Code": "KGZ"
+ },
+ {
+   "Entity": "Laos",
+   "Code": "LAO"
+ },
+ {
+   "Entity": "Latvia",
+   "Code": "LVA"
+ },
+ {
+   "Entity": "Lebanon",
+   "Code": "LBN"
+ },
+ {
+   "Entity": "Lesotho",
+   "Code": "LSO"
+ },
+ {
+   "Entity": "Liberia",
+   "Code": "LBR"
+ },
+ {
+   "Entity": "Libya",
+   "Code": "LBY"
+ },
+ {
+   "Entity": "Lithuania",
+   "Code": "LTU"
+ },
+ {
+   "Entity": "Luxembourg",
+   "Code": "LUX"
+ },
+ {
+   "Entity": "Madagascar",
+   "Code": "MDG"
+ },
+ {
+   "Entity": "Malawi",
+   "Code": "MWI"
+ },
+ {
+   "Entity": "Malaysia",
+   "Code": "MYS"
+ },
+ {
+   "Entity": "Maldives",
+   "Code": "MDV"
+ },
+ {
+   "Entity": "Mali",
+   "Code": "MLI"
+ },
+ {
+   "Entity": "Malta",
+   "Code": "MLT"
+ },
+ {
+   "Entity": "Mauritania",
+   "Code": "MRT"
+ },
+ {
+   "Entity": "Mauritius",
+   "Code": "MUS"
+ },
+ {
+   "Entity": "Mexico",
+   "Code": "MEX"
+ },
+ {
+   "Entity": "Moldova",
+   "Code": "MDA"
+ },
+ {
+   "Entity": "Mongolia",
+   "Code": "MNG"
+ },
+ {
+   "Entity": "Montenegro",
+   "Code": "MNE"
+ },
+ {
+   "Entity": "Morocco",
+   "Code": "MAR"
+ },
+ {
+   "Entity": "Mozambique",
+   "Code": "MOZ"
+ },
+ {
+   "Entity": "Myanmar",
+   "Code": "MMR"
+ },
+ {
+   "Entity": "Namibia",
+   "Code": "NAM"
+ },
+ {
+   "Entity": "Nepal",
+   "Code": "NPL"
+ },
+ {
+   "Entity": "Netherlands",
+   "Code": "NLD"
+ },
+ {
+   "Entity": "New Zealand",
+   "Code": "NZL"
+ },
+ {
+   "Entity": "Nicaragua",
+   "Code": "NIC"
+ },
+ {
+   "Entity": "Niger",
+   "Code": "NER"
+ },
+ {
+   "Entity": "Nigeria",
+   "Code": "NGA"
+ },
+ {
+   "Entity": "North America",
+   "Code": ""
+ },
+ {
+   "Entity": "North Korea",
+   "Code": "PRK"
+ },
+ {
+   "Entity": "North Macedonia",
+   "Code": "MKD"
+ },
+ {
+   "Entity": "Norway",
+   "Code": "NOR"
+ },
+ {
+   "Entity": "Oceania",
+   "Code": ""
+ },
+ {
+   "Entity": "Oman",
+   "Code": "OMN"
+ },
+ {
+   "Entity": "Pakistan",
+   "Code": "PAK"
+ },
+ {
+   "Entity": "Panama",
+   "Code": "PAN"
+ },
+ {
+   "Entity": "Papua New Guinea",
+   "Code": "PNG"
+ },
+ {
+   "Entity": "Paraguay",
+   "Code": "PRY"
+ },
+ {
+   "Entity": "Peru",
+   "Code": "PER"
+ },
+ {
+   "Entity": "Philippines",
+   "Code": "PHL"
+ },
+ {
+   "Entity": "Poland",
+   "Code": "POL"
+ },
+ {
+   "Entity": "Portugal",
+   "Code": "PRT"
+ },
+ {
+   "Entity": "Qatar",
+   "Code": "QAT"
+ },
+ {
+   "Entity": "Romania",
+   "Code": "ROU"
+ },
+ {
+   "Entity": "Russia",
+   "Code": "RUS"
+ },
+ {
+   "Entity": "Rwanda",
+   "Code": "RWA"
+ },
+ {
+   "Entity": "Sao Tome and Principe",
+   "Code": "STP"
+ },
+ {
+   "Entity": "Saudi Arabia",
+   "Code": "SAU"
+ },
+ {
+   "Entity": "Senegal",
+   "Code": "SEN"
+ },
+ {
+   "Entity": "Serbia",
+   "Code": "SRB"
+ },
+ {
+   "Entity": "Seychelles",
+   "Code": "SYC"
+ },
+ {
+   "Entity": "Sierra Leone",
+   "Code": "SLE"
+ },
+ {
+   "Entity": "Singapore",
+   "Code": "SGP"
+ },
+ {
+   "Entity": "Slovakia",
+   "Code": "SVK"
+ },
+ {
+   "Entity": "Slovenia",
+   "Code": "SVN"
+ },
+ {
+   "Entity": "Solomon Islands",
+   "Code": "SLB"
+ },
+ {
+   "Entity": "Somalia",
+   "Code": "SOM"
+ },
+ {
+   "Entity": "South Africa",
+   "Code": "ZAF"
+ },
+ {
+   "Entity": "South America",
+   "Code": ""
+ },
+ {
+   "Entity": "South Korea",
+   "Code": "KOR"
+ },
+ {
+   "Entity": "South Sudan",
+   "Code": "SSD"
+ },
+ {
+   "Entity": "Spain",
+   "Code": "ESP"
+ },
+ {
+   "Entity": "Sri Lanka",
+   "Code": "LKA"
+ },
+ {
+   "Entity": "Sudan",
+   "Code": "SDN"
+ },
+ {
+   "Entity": "Suriname",
+   "Code": "SUR"
+ },
+ {
+   "Entity": "Sweden",
+   "Code": "SWE"
+ },
+ {
+   "Entity": "Switzerland",
+   "Code": "CHE"
+ },
+ {
+   "Entity": "Syria",
+   "Code": "SYR"
+ },
+ {
+   "Entity": "Tajikistan",
+   "Code": "TJK"
+ },
+ {
+   "Entity": "Tanzania",
+   "Code": "TZA"
+ },
+ {
+   "Entity": "Thailand",
+   "Code": "THA"
+ },
+ {
+   "Entity": "Togo",
+   "Code": "TGO"
+ },
+ {
+   "Entity": "Trinidad and Tobago",
+   "Code": "TTO"
+ },
+ {
+   "Entity": "Tunisia",
+   "Code": "TUN"
+ },
+ {
+   "Entity": "Turkey",
+   "Code": "TUR"
+ },
+ {
+   "Entity": "Turkmenistan",
+   "Code": "TKM"
+ },
+ {
+   "Entity": "Uganda",
+   "Code": "UGA"
+ },
+ {
+   "Entity": "Ukraine",
+   "Code": "UKR"
+ },
+ {
+   "Entity": "United Arab Emirates",
+   "Code": "ARE"
+ },
+ {
+   "Entity": "United Kingdom",
+   "Code": "GBR"
+ },
+ {
+   "Entity": "United States",
+   "Code": "USA"
+ },
+ {
+   "Entity": "Uruguay",
+   "Code": "URY"
+ },
+ {
+   "Entity": "Uzbekistan",
+   "Code": "UZB"
+ },
+ {
+   "Entity": "Vanuatu",
+   "Code": "VUT"
+ },
+ {
+   "Entity": "Venezuela",
+   "Code": "VEN"
+ },
+ {
+   "Entity": "Vietnam",
+   "Code": "VNM"
+ },
+ {
+   "Entity": "World",
+   "Code": "OWID_WRL"
+ },
+ {
+   "Entity": "Yemen",
+   "Code": "YEM"
+ },
+ {
+   "Entity": "Zambia",
+   "Code": "ZMB"
+ },
+ {
+   "Entity": "Zimbabwe",
+   "Code": "ZWE"
+ }
+]

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>D3 Project Starter Template</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div>
+        <div>
+            <button onclick="graphView('histogram')">Histogram</button>
+            <button onclick="graphView('scatterplot')">Scatterplot</button>
+            <button onclick="graphView('line')">Line Graph</button>
+        </div>
+    </div>
+
+    <div>
+        <div id="histogramView" class="graph-view" style="visibility: hidden;">
+            <div>
+                <select id="year-dropdown-histogram">
+
+                </select>
+            </div>
+
+            <div>
+                <svg id="histogramHri"></svg>
+            </div>
+
+            <div>
+                <svg id="histogramSr"></svg>
+            </div>
+        </div>
+
+        <div id="lineView" class="graph-view" style="visibility: hidden;">
+            <div id="scrollbox" class="scrollbox">
+
+        </div>
+
+
+        <div><svg id="line"></svg></div>
+        </div>
+
+        <div id="scatterplotView" class="graph-view" style="visibility: hidden;">
+            <div>
+            <select id="year-dropdown-scatterplot">
+
+            </select>
+        </div>
+
+        <div style="margin-top: 25px; margin-bottom: 100px">
+            <svg id="scatterplot"></svg>
+        </div>
+        </div>
+    </div>
+
+    <div id="tooltip"></div>
+
+    <!-- D3 bundle -->
+    <script src="js/d3.v6.min.js"></script>
+
+    <!-- Our JS code - INCLUDING the new files-->
+    <script src="js/line.js"></script>
+    <script src="js/scatterplot.js"></script>
+    <script src="js/histogram.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+
+</html>
+
+<script>
+    function graphView(page) {
+    let histogramShow = document.getElementById("histogramView");
+    let lineShow = document.getElementById("lineView")
+    let scatterplotShow = document.getElementById("scatterplotView")
+
+    console.log(page)
+
+    if(page === "histogram"){
+        if(histogramShow.style.visibility === "hidden"){
+            histogramShow.style.visibility = "visible"
+            lineShow.style.visibility = "hidden"
+            scatterplotShow.style.visibility = "hidden"
+        } else {
+            histogramShow.style.visibility = "hidden"
+        }
+    } else if(page === "line") {
+        if(lineShow.style.visibility === "hidden"){
+            lineShow.style.visibility = "visible"
+            histogramShow.style.visibility = "hidden"
+            scatterplotShow.style.visibility = "hidden"
+        } else {
+            lineShow.style.visibility = "hidden"
+        }
+    } else {
+        if(scatterplotShow.style.visibility === "hidden"){
+            scatterplotShow.style.visibility = "visible"
+            histogramShow.style.visibility = "hidden"
+            lineShow.style.visibility = "hidden"
+        } else {
+            scatterplotShow.style.visibility = "hidden"
+        }
+    }
+}
+</script>
+
+<style>
+    .graph-view {
+        position: absolute; top: 50px; width: 100%;
+    }
+    .scrollbox {
+        height: 200px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 300px
+    }
+
+    /* Tooltip */
+    #tooltip {
+        position: absolute;
+        display: none;
+        background: #fff;
+        box-shadow: 3px 3px 3px 0px rgb(92 92 92 / 0.5);
+        border: 1px solid #ddd;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 8px;
+        min-width: 160px;
+        color: #333;
+    }
+
+    .tooltip-title {
+        color: #000;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    #tooltip ul {
+        margin: 5px 0 0 0;
+        padding-left: 20px;
+    }
+</style>
