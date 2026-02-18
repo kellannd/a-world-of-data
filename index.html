@@ -19,9 +19,16 @@
     </div>
 
     <div>
+        <div id="choroplethView">
+            <div>
+                <svg id="choropleth"></svg>
+            </div>
+        </div>
         <div id="histogramView" class="graph-view" style="visibility: hidden;">
             <div>
-                <select id="year-dropdown-histogram">
+                <label for="year-dropdown-histogram">Select a Year: </label>
+                <select id="year-dropdown-histogram" style="padding: 16px; width: 100px; font-size: 20px;"
+                    class="year-drowpdown">
 
                 </select>
             </div>
@@ -38,22 +45,22 @@
         <div id="lineView" class="graph-view" style="visibility: hidden;">
             <div id="scrollbox" class="scrollbox">
 
+            </div>
+
+
+            <div><svg id="line"></svg></div>
         </div>
 
-
-        <div><svg id="line"></svg></div>
-        </div>
-
-        <div id="scatterplotView" class="graph-view" style="visibility: hidden;">
+        <div id="scatterplotView" class="graph-view" style="visibility: hidden; text-align: center;">
             <div>
-            <select id="year-dropdown-scatterplot">
+                <select id="year-dropdown-scatterplot" style="padding: 16px; width: 100px" class="year-dropdown">
 
-            </select>
-        </div>
+                </select>
+            </div>
 
-        <div style="margin-top: 25px; margin-bottom: 100px">
-            <svg id="scatterplot"></svg>
-        </div>
+            <div style="margin-top: 25px; margin-bottom: 100px">
+                <svg id="scatterplot"></svg>
+            </div>
         </div>
     </div>
 
@@ -75,50 +82,53 @@
 
 <script>
     function graphView(page) {
-    let histogramShow = document.getElementById("histogramView");
-    let lineShow = document.getElementById("lineView")
-    let scatterplotShow = document.getElementById("scatterplotView")
+        let histogramShow = document.getElementById("histogramView");
+        let lineShow = document.getElementById("lineView")
+        let scatterplotShow = document.getElementById("scatterplotView")
 
-    console.log(page)
+        console.log(page)
 
-    if(page === "histogram"){
-        if(histogramShow.style.visibility === "hidden"){
-            histogramShow.style.visibility = "visible"
-            lineShow.style.visibility = "hidden"
-            scatterplotShow.style.visibility = "hidden"
+        if (page === "histogram") {
+            if (histogramShow.style.visibility === "hidden") {
+                histogramShow.style.visibility = "visible"
+                lineShow.style.visibility = "hidden"
+                scatterplotShow.style.visibility = "hidden"
+            } else {
+                histogramShow.style.visibility = "hidden"
+            }
+        } else if (page === "line") {
+            if (lineShow.style.visibility === "hidden") {
+                lineShow.style.visibility = "visible"
+                histogramShow.style.visibility = "hidden"
+                scatterplotShow.style.visibility = "hidden"
+            } else {
+                lineShow.style.visibility = "hidden"
+            }
         } else {
-            histogramShow.style.visibility = "hidden"
-        }
-    } else if(page === "line") {
-        if(lineShow.style.visibility === "hidden"){
-            lineShow.style.visibility = "visible"
-            histogramShow.style.visibility = "hidden"
-            scatterplotShow.style.visibility = "hidden"
-        } else {
-            lineShow.style.visibility = "hidden"
-        }
-    } else {
-        if(scatterplotShow.style.visibility === "hidden"){
-            scatterplotShow.style.visibility = "visible"
-            histogramShow.style.visibility = "hidden"
-            lineShow.style.visibility = "hidden"
-        } else {
-            scatterplotShow.style.visibility = "hidden"
+            if (scatterplotShow.style.visibility === "hidden") {
+                scatterplotShow.style.visibility = "visible"
+                histogramShow.style.visibility = "hidden"
+                lineShow.style.visibility = "hidden"
+            } else {
+                scatterplotShow.style.visibility = "hidden"
+            }
         }
     }
-}
 </script>
 
 <style>
     .graph-view {
-        position: absolute; top: 50px; width: 100%;
+        position: absolute;
+        top: 50px;
+        width: 100%;
     }
+
     .scrollbox {
         height: 200px;
         overflow-y: auto;
         border: 1px solid #ccc;
         padding: 10px;
-        width: 300px
+        width: 300px;
     }
 
     /* Tooltip */
@@ -144,5 +154,10 @@
     #tooltip ul {
         margin: 5px 0 0 0;
         padding-left: 20px;
+    }
+
+    .year-drowpdown {
+        padding: 16px;
+        width: 50px
     }
 </style>

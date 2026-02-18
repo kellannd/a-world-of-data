@@ -2,7 +2,7 @@ class Scatterplot {
   constructor(_config, _data) {
     this.config = {
       parentElement: _config.parentElement,
-      containerWidth: _config.containerWidth || 1200,
+      containerWidth: _config.containerWidth || 1000,
       containerHeight: _config.containerHeight || 600,
       margin: _config.margin || { top: 25, right: 20, bottom: 20, left: 35 },
       tooltipPadding: _config.tooltipPadding || 15
@@ -42,13 +42,14 @@ class Scatterplot {
 
 
         // Initialize axes
-        vis.xAxis = d3.axisTop(vis.xScale);
+        vis.xAxis = d3.axisBottom(vis.xScale);
         vis.yAxis = d3.axisLeft(vis.yScale);
 
 
         // Draw the axis
         vis.xAxisGroup = vis.chart.append('g')
           .attr('class', 'axis x-axis')
+          .attr("transform", `translate(0,${vis.height})`)
           .call(vis.xAxis);
 
         vis.yAxisGroup = vis.chart.append('g')
@@ -63,13 +64,11 @@ class Scatterplot {
 
   updateVis(data) {
     let vis = this;
-    console.log(vis.data)
 
     if(data){
         vis.data = data
     }
 
-    console.log(vis.data)
     // Domains
     vis.xScale.domain([0,50]);
     vis.yScale.domain(d3.extent(vis.data, (d) => d.hri));

@@ -35,22 +35,19 @@ class Histogram {
         `translate(${vis.config.margin.left},${vis.config.margin.top})`,
       );
 
-
-    vis.updateVis(vis.data);
+    vis.updateVis(vis.data, vis.histogramType);
   }
 
   updateVis(data, histogramType) {
     let vis = this;
 
-    vis.histogramType = histogramType
+    vis.histogramType = histogramType;
 
-    if (data) {
-      vis.data = data;
-    }
+    vis.data = data;
 
     vis.chart.selectAll("*").remove();
 
-        if (vis.histogramType == "histogramHri") {
+    if (vis.histogramType == "histogramHri") {
       vis.bin = d3
         .bin()
         .thresholds(50)
@@ -89,7 +86,6 @@ class Histogram {
       .append("g")
       .attr("class", "y-axis")
       .call(vis.yAxis);
-
 
     vis.chart
       .append("g")

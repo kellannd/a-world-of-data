@@ -1,5 +1,4 @@
-console.log("hello world");
-let data, line, countries, scatterplot, histogramHri, historgramSr;
+let data, line, countries, scatterplot, histogramHri, histogramSr, worldMap;
 
 d3.csv("data/countries.csv")
   .then((_data) => {
@@ -43,9 +42,12 @@ d3.csv("data/countries.csv")
   })
   .catch((error) => console.error(error));
 
-d3.csv("data/merged_data.csv")
-  .then((_data) => {
-    data = _data;
+  Promise.all([
+  d3.csv('data/merged_data.csv'),
+  d3.json('data/world.json')
+]).then(_data => {
+    data = _data[0]
+    worldMap = _data[1]
 
     data.forEach((d) => {
       d.Year = +d.Year;
@@ -80,6 +82,9 @@ d3.csv("data/merged_data.csv")
     )
 
     histogramSr = new Histogram({parentElement: "#histogramSr"}, histogramData, "histogramSr")
+
+    // choropleth
+
   })
   .catch((error) => console.error(error));
 
