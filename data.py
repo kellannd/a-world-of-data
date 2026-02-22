@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 
+# filtering data and merging data files
 # removes any data from before 2000 and after 2021
 
 df = pd.read_csv("data/human-rights-index-vdem.csv")

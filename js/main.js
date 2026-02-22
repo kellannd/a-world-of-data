@@ -1,4 +1,12 @@
-let data, line, countries, scatterplot, histogramHri, histogramSr, worldMap;
+let data,
+  line,
+  countries,
+  scatterplot,
+  histogramHri,
+  histogramSr,
+  worldMap,
+  choroplethHri;
+  choroplethSr;
 
 d3.csv("data/countries.csv")
   .then((_data) => {
@@ -42,12 +50,10 @@ d3.csv("data/countries.csv")
   })
   .catch((error) => console.error(error));
 
-  Promise.all([
-  d3.csv('data/merged_data.csv'),
-  d3.json('data/world.json')
-]).then(_data => {
-    data = _data[0]
-    worldMap = _data[1]
+Promise.all([d3.csv("data/merged_data.csv"), d3.json("data/world.json")])
+  .then((_data) => {
+    data = _data[0];
+    worldMap = _data[1];
 
     data.forEach((d) => {
       d.Year = +d.Year;
@@ -64,26 +70,49 @@ d3.csv("data/countries.csv")
     // scatterplot
     yearDropdown("scatterplot");
     let scatterplotYear = getSelectedYear("scatterplot");
-    const scatterplotData = data.filter((d) => scatterplotYear.includes(d.Year));
+    const scatterplotData = data.filter((d) =>
+      scatterplotYear.includes(d.Year),
+    );
     scatterplot = new Scatterplot(
       { parentElement: "#scatterplot" },
       scatterplotData,
     );
 
     // histogram
-    yearDropdown("histogram")
-    let histogramYear = getSelectedYear("histogram")
-    const histogramData = data.filter((d) => histogramYear.includes(d.Year))
-    console.log(histogramData)
+    yearDropdown("histogram");
+    let histogramYear = getSelectedYear("histogram");
+    const histogramData = data.filter((d) => histogramYear.includes(d.Year));
+    console.log(histogramData);
     histogramHri = new Histogram(
       { parentElement: "#histogramHri" },
       histogramData,
-      "histogramHri"
-    )
+      "histogramHri",
+    );
 
-    histogramSr = new Histogram({parentElement: "#histogramSr"}, histogramData, "histogramSr")
+    histogramSr = new Histogram(
+      { parentElement: "#histogramSr" },
+      histogramData,
+      "histogramSr",
+    );
 
     // choropleth
+    const choroplethData = data.filter((d) => histogramYear.includes(d.Year));
+    worldMap.features.forEach((d) => {
+      for (let i = 0; i < choroplethData.length; i++) {
+        if (d.id == choroplethData[i].Code) {
+          d.hri = +choroplethData[i].hri;
+          d.sr = +choroplethData[i].rate;
+        }
+      }
+    });
+
+    choroplethHri = new Choropleth({
+      parentElement: "#choroplethHri"
+    }, worldMap, "choroplethHri")
+
+    choroplethSr = new Choropleth({
+      parentElement: "#choroplethSr"
+    }, worldMap, "choroplethSr")
 
   })
   .catch((error) => console.error(error));
@@ -132,25 +161,25 @@ function yearDropdown(graph) {
     container.appendChild(option);
   }
 
-  if(graph == "scatterplot"){
+  if (graph == "scatterplot") {
     let element = document.getElementById("year-dropdown-" + graph);
-  element.addEventListener("change", () => {
-    const getSelectedYear = element.value;
+    element.addEventListener("change", () => {
+      const getSelectedYear = element.value;
 
-    const filteredData = data.filter((d) => getSelectedYear.includes(d.Year));
+      const filteredData = data.filter((d) => getSelectedYear.includes(d.Year));
 
-    scatterplot.updateVis(filteredData);
-  });
-  } else if( graph == "histogram") {
+      scatterplot.updateVis(filteredData);
+    });
+  } else if (graph == "histogram") {
     let element = document.getElementById("year-dropdown-" + graph);
-  element.addEventListener("change", () => {
-    const getSelectedYear = element.value;
+    element.addEventListener("change", () => {
+      const getSelectedYear = element.value;
 
-    const filteredData = data.filter((d) => getSelectedYear.includes(d.Year));
+      const filteredData = data.filter((d) => getSelectedYear.includes(d.Year));
 
-    histogramHri.updateVis(filteredData, "histogramHri");
-    histogramSr.updateVis(filteredData, "histogramSr")
-  });
+      histogramHri.updateVis(filteredData, "histogramHri");
+      histogramSr.updateVis(filteredData, "histogramSr");
+    });
   }
 }
 
