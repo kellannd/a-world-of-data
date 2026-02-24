@@ -11,58 +11,79 @@
 <body>
 
     <div>
-        <div>
-            <button onclick="graphView('histogram')">Histogram</button>
-            <button onclick="graphView('scatterplot')">Scatterplot</button>
-            <button onclick="graphView('line')">Line Graph</button>
+        <div style="text-align: center; padding-top: 25px">
+            <button id="scatterplot-btn" onclick="graphView('scatterplot')">Scatterplot</button>
+            <button id="histogram-btn" onclick="graphView('histogram')">Histogram</button>
+            <button id="choropleth-btn" onclick="graphView('choropleth')">Choropleth</button>
+            <button id="line-btn" onclick="graphView('line')">Line Graph</button>
+                <label for="year-dropdown" style="font-size: 20px; margin-left: 20px">Select a Year: </label>
+            <select id="year-dropdown" class="year-drowpdown" style="padding: 10px 20px 10px 20px; width: 125px; font-size: 20px; border-radius: 10px"></select>
+
         </div>
     </div>
 
     <div>
-        <div id="choroplethView">
-            <div>
+        <div id="choroplethView" class="graph-view" style="visibility: hidden;">
+            <!-- <label for="year-dropdown-histogram">Select a Year: </label>
+                <select id="year-dropdown-choropleth" style="padding: 16px; width: 100px; font-size: 20px;"
+                    class="year-drowpdown">
+
+                </select> -->
+            <div style="display: grid; grid-template-columns: auto auto;">
+                <div>
                 <svg id="choroplethHri"></svg>
             </div>
 
             <div>
                 <svg id="choroplethSr"></svg>
             </div>
+            </div>
         </div>
         <div id="histogramView" class="graph-view" style="visibility: hidden;">
-            <div>
-                <label for="year-dropdown-histogram">Select a Year: </label>
+            <!-- <div>
+                <label style="font-size: 24px;" for="year-dropdown-histogram">Select a Year: </label>
                 <select id="year-dropdown-histogram" style="padding: 16px; width: 100px; font-size: 20px;"
                     class="year-drowpdown">
 
                 </select>
-            </div>
+            </div> -->
 
             <div>
+                <div style="display: grid; grid-template-columns: auto auto;">
+                <div>
                 <svg id="histogramHri"></svg>
             </div>
 
             <div>
                 <svg id="histogramSr"></svg>
             </div>
+            </div>
+            </div>
         </div>
 
         <div id="lineView" class="graph-view" style="visibility: hidden;">
+
+
+            <div>
+                <svg id="line-graph-legend"></svg>
+            </div>
+            <div style="display: grid; grid-template-columns: auto auto auto;">
+                <div><svg id="lineHri"></svg></div>
+            <div><svg id="lineSr"></svg></div>
             <div id="scrollbox" class="scrollbox">
 
             </div>
-
-
-            <div><svg id="line"></svg></div>
+            </div>
         </div>
 
-        <div id="scatterplotView" class="graph-view" style="visibility: hidden; text-align: center;">
-            <div>
+        <div id="scatterplotView" class="graph-view" style="visibility: visible; text-align: center; height:600px">
+            <!-- <div>
                 <select id="year-dropdown-scatterplot" style="padding: 16px; width: 100px" class="year-dropdown">
 
                 </select>
-            </div>
+            </div> -->
 
-            <div style="margin-top: 25px; margin-bottom: 100px">
+            <div style="margin-top: 25px; margin-bottom: 100px;">
                 <svg id="scatterplot"></svg>
             </div>
         </div>
@@ -90,50 +111,93 @@
         let histogramShow = document.getElementById("histogramView");
         let lineShow = document.getElementById("lineView")
         let scatterplotShow = document.getElementById("scatterplotView")
+        let choroplethShow = document.getElementById("choroplethView")
 
-        console.log(page)
+        let element = document.getElementById(page +"-btn")
 
         if (page === "histogram") {
             if (histogramShow.style.visibility === "hidden") {
                 histogramShow.style.visibility = "visible"
+
                 lineShow.style.visibility = "hidden"
                 scatterplotShow.style.visibility = "hidden"
+                choroplethShow.style.visibility = "hidden"
+
             } else {
                 histogramShow.style.visibility = "hidden"
+                scatterplotShow.style.visibility = "visible"
             }
         } else if (page === "line") {
             if (lineShow.style.visibility === "hidden") {
                 lineShow.style.visibility = "visible"
+
                 histogramShow.style.visibility = "hidden"
                 scatterplotShow.style.visibility = "hidden"
+                choroplethShow.style.visibility = "hidden"
             } else {
                 lineShow.style.visibility = "hidden"
+                scatterplotShow.style.visibility = "visible"
             }
-        } else {
+        } else if (page === "choropleth") {
+            if(choroplethShow.style.visibility === "hidden"){
+                histogramShow.style.visibility = "hidden"
+                scatterplotShow.style.visibility = "hidden"
+                lineShow.style.visibility = "hidden"
+
+                choroplethShow.style.visibility = "visible"
+            } else {
+                choroplethShow.style.visibility = "hidden"
+                scatterplotShow.style.visibility = "visible"
+            }
+        }
+        else {
             if (scatterplotShow.style.visibility === "hidden") {
                 scatterplotShow.style.visibility = "visible"
+
                 histogramShow.style.visibility = "hidden"
                 lineShow.style.visibility = "hidden"
+                choroplethShow.style.visibility = "hidden"
             } else {
                 scatterplotShow.style.visibility = "hidden"
+                scatterplotShow.style.visibility = "visible"
             }
         }
     }
 </script>
 
 <style>
+    	*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: black;
+}
+    button {
+        padding: 10px 20px 10px 20px;
+        margin: 10px;
+        border-radius: 10px;
+        border: transparent;
+        font-size: 20px
+    }
+
+    button:hover {
+        background-color: lightgray
+    }
     .graph-view {
         position: absolute;
-        top: 50px;
+        top: 100px;
         width: 100%;
+        text-align: center;
     }
 
     .scrollbox {
-        height: 200px;
+        height: 400px;
         overflow-y: auto;
         border: 1px solid #ccc;
         padding: 10px;
         width: 300px;
+        text-align: left;
     }
 
     /* Tooltip */
@@ -143,16 +207,15 @@
         background: #fff;
         box-shadow: 3px 3px 3px 0px rgb(92 92 92 / 0.5);
         border: 1px solid #ddd;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 500;
         padding: 8px;
-        min-width: 160px;
         color: #333;
     }
 
     .tooltip-title {
         color: #000;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 600;
     }
 
@@ -164,5 +227,18 @@
     .year-drowpdown {
         padding: 16px;
         width: 50px
+    }
+
+    .dropdown-label {
+        font-size: 16px
+    }
+
+    .country-checkbox {
+        padding-top: 5px;
+
+    }
+
+    .country-label {
+        padding-left: 5px
     }
 </style>
