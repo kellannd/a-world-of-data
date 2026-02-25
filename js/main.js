@@ -197,46 +197,6 @@ function yearDropdown() {
       choroplethHri.updateVis(worldMap, "choroplethHri");
       choroplethSr.updateVis(worldMap, "choroplethSr");
     });
-
-  // if (graph == "scatterplot") {
-  //   let element = document.getElementById("year-dropdown-" + graph);
-  //   element.addEventListener("change", () => {
-  //     const getSelectedYear = element.value;
-
-  //     const filteredData = data.filter((d) => getSelectedYear.includes(d.Year));
-
-  //     scatterplot.updateVis(filteredData);
-  //   });
-  // } else if (graph == "histogram") {
-  //   let element = document.getElementById("year-dropdown-" + graph);
-  //   element.addEventListener("change", () => {
-  //     const getSelectedYear = element.value;
-
-  //     const filteredData = data.filter((d) => getSelectedYear.includes(d.Year));
-
-  //     histogramHri.updateVis(filteredData, "histogramHri");
-  //     histogramSr.updateVis(filteredData, "histogramSr");
-  //   });
-  // } else if (graph == "choropleth"){
-  //   let element = document.getElementById("year-dropdown-" + graph);
-  //   element.addEventListener("change", () => {
-  //     const getSelectedYear = element.value;
-
-  //     const choroplethData = data.filter((d) => getSelectedYear.includes(d.Year));
-
-  //     worldMap.features.forEach((d) => {
-  //     for (let i = 0; i < choroplethData.length; i++) {
-  //       if (d.id == choroplethData[i].Code) {
-  //         d.hri = +choroplethData[i].hri;
-  //         d.sr = +choroplethData[i].rate;
-  //       }
-  //     }
-  //   });
-
-  //     choroplethHri.updateVis(worldMap, "choroplethHri");
-  //     choroplethSr.updateVis(worldMap, "choroplethSr");
-  //   });
-  // }
 }
 
 function getSelectedYear(graph) {

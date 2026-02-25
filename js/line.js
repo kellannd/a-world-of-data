@@ -188,9 +188,9 @@ class Line {
       .append("text")
       .attr("class", "x label")
       .attr("x", vis.width / 2)
-      .attr("y", vis.height + vis.config.margin.bottom / 2 + 10) // Adjust y as needed for spacing
-      .attr("text-anchor", "middle") // Centers the text at the x position
-      .text("Year"); // The label text
+      .attr("y", vis.height + vis.config.margin.bottom / 2 + 10)
+      .attr("text-anchor", "middle")
+      .text("Year");
 
     vis.groupedData = d3.groups(vis.data, (d) => d.Entity);
 
