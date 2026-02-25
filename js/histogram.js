@@ -113,6 +113,7 @@ class Histogram {
       .selectAll("rect")
       .data(vis.bins)
       .join("rect")
+      .attr("fill", "#41407E")
       .attr("x", (d) => vis.xScale(d.x0) + 1)
       .attr("width", (d) => vis.xScale(d.x1) - vis.xScale(d.x0) - 1)
       .attr("y", (d) => vis.yScale(d.length))
@@ -121,19 +122,17 @@ class Histogram {
     if(vis.histogramType === "histogramHri") {
 vis.chart.append("text")
     .attr("class", "x label")
-    // Position at the bottom center of the chart area
     .attr("x", vis.width / 2)
-    .attr("y", vis.height + vis.config.margin.bottom / 2 + 10) // Adjust y as needed for spacing
-    .attr("text-anchor", "middle") // Centers the text at the x position
-    .text("Human Rights Index"); // The label text
+    .attr("y", vis.height + vis.config.margin.bottom / 2 + 10)
+    .attr("text-anchor", "middle")
+    .text("Human Rights Index");
     } else if (vis.histogramType === "histogramSr") {
       vis.chart.append("text")
     .attr("class", "x label")
-    // Position at the bottom center of the chart area
     .attr("x", vis.width / 2)
-    .attr("y", vis.height + vis.config.margin.bottom / 2 + 10) // Adjust y as needed for spacing
-    .attr("text-anchor", "middle") // Centers the text at the x position
-    .text("Suicide Rate"); // The label text
+    .attr("y", vis.height + vis.config.margin.bottom / 2 + 10)
+    .attr("text-anchor", "middle")
+    .text("Suicide Rate");
     }
 
     vis.chart.append("text")

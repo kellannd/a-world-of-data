@@ -181,7 +181,7 @@ class Line {
         .attr("x", 0 - vis.height / 2)
         .attr("dy", "1em")
         .style("text-anchor", "middle")
-        .text("Suicide Rate per 100,000");
+        .text("Suicide Rate per 100,000 people");
     }
 
     vis.chart
@@ -247,10 +247,9 @@ class Line {
           .style("left", event.pageX + vis.config.tooltipPadding + "px")
           .style("top", event.pageY + vis.config.tooltipPadding + "px").html(`
               <div class="tooltip-title">${d.Entity}</div>
-              <ul>
-                <li>HRI: ${d.hri}</li>
-                <li>SR: ${d.rate}</li>
-              </ul>
+
+                <p>Human Rights Index: ${d.hri.toFixed(2)}</p>
+                <p>Suicide Rate: ${d.rate.toFixed(2)}</p>
             `);
       })
       .on("mouseleave", () => {

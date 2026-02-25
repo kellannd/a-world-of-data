@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body style="height: fit-content">
 
     <div>
         <div style="text-align: center; padding-top: 25px">
-            <button id="scatterplot-btn" onclick="graphView('scatterplot')">Scatterplot</button>
+            <button id="scatterplot-btn" onclick="graphView('scatterplot')" class="active-btn">Scatterplot</button>
             <button id="histogram-btn" onclick="graphView('histogram')">Histogram</button>
             <button id="choropleth-btn" onclick="graphView('choropleth')">Choropleth</button>
             <button id="line-btn" onclick="graphView('line')">Line Graph</button>
@@ -23,7 +23,7 @@
     </div>
 
     <div>
-        <div id="choroplethView" class="graph-view" style="visibility: hidden;">
+        <div id="choroplethView" class="graph-view" style="visibility: hidden; padding-top: 40px">
             <!-- <label for="year-dropdown-histogram">Select a Year: </label>
                 <select id="year-dropdown-choropleth" style="padding: 16px; width: 100px; font-size: 20px;"
                     class="year-drowpdown">
@@ -39,7 +39,7 @@
             </div>
             </div>
         </div>
-        <div id="histogramView" class="graph-view" style="visibility: hidden;">
+        <div id="histogramView" class="graph-view" style="visibility: hidden; padding-top: 40px">
             <!-- <div>
                 <label style="font-size: 24px;" for="year-dropdown-histogram">Select a Year: </label>
                 <select id="year-dropdown-histogram" style="padding: 16px; width: 100px; font-size: 20px;"
@@ -61,8 +61,10 @@
             </div>
         </div>
 
-        <div id="lineView" class="graph-view" style="visibility: hidden;">
-
+        <div id="lineView" class="graph-view" style="visibility: hidden; padding-top: 40px">
+            <div>
+                <p style="padding-bottom: 10px; font-size: 20px"><b>Human Rights Index and Suicide Rate from 2000-2021</b></p>
+            </div>
 
             <div>
                 <svg id="line-graph-legend"></svg>
@@ -70,13 +72,16 @@
             <div style="display: grid; grid-template-columns: auto auto auto;">
                 <div><svg id="lineHri"></svg></div>
             <div><svg id="lineSr"></svg></div>
-            <div id="scrollbox" class="scrollbox">
+            <div>
+                <div><p style="font-size: 16px; padding-bottom: 10px; width: 200px"><b>Select Countries to Display:</b></p></div>
+                <div id="scrollbox" class="scrollbox">
 
+            </div>
             </div>
             </div>
         </div>
 
-        <div id="scatterplotView" class="graph-view" style="visibility: visible; text-align: center; height:600px">
+        <div id="scatterplotView" class="graph-view" style="visibility: visible; text-align: center; height:550px; margin-top: -10px">
             <!-- <div>
                 <select id="year-dropdown-scatterplot" style="padding: 16px; width: 100px" class="year-dropdown">
 
@@ -123,9 +128,17 @@
                 scatterplotShow.style.visibility = "hidden"
                 choroplethShow.style.visibility = "hidden"
 
+                document.getElementById("histogram-btn").classList.add("active-btn")
+                document.getElementById("line-btn").classList.remove("active-btn")
+                document.getElementById("scatterplot-btn").classList.remove("active-btn")
+                document.getElementById("choropleth-btn").classList.remove("active-btn")
+
             } else {
                 histogramShow.style.visibility = "hidden"
                 scatterplotShow.style.visibility = "visible"
+
+                document.getElementById("histogram-btn").classList.remove("active-btn")
+                document.getElementById("scatterplot-btn").classList.add("active-btn")
             }
         } else if (page === "line") {
             if (lineShow.style.visibility === "hidden") {
@@ -134,9 +147,17 @@
                 histogramShow.style.visibility = "hidden"
                 scatterplotShow.style.visibility = "hidden"
                 choroplethShow.style.visibility = "hidden"
+
+                document.getElementById("line-btn").classList.add("active-btn")
+                document.getElementById("histogram-btn").classList.remove("active-btn")
+                document.getElementById("scatterplot-btn").classList.remove("active-btn")
+                document.getElementById("choropleth-btn").classList.remove("active-btn")
             } else {
                 lineShow.style.visibility = "hidden"
                 scatterplotShow.style.visibility = "visible"
+
+                document.getElementById("scatterplot-btn").classList.add("active-btn")
+                document.getElementById("line-btn").classList.remove("active-btn")
             }
         } else if (page === "choropleth") {
             if(choroplethShow.style.visibility === "hidden"){
@@ -145,9 +166,17 @@
                 lineShow.style.visibility = "hidden"
 
                 choroplethShow.style.visibility = "visible"
+
+                document.getElementById("choropleth-btn").classList.add("active-btn")
+                document.getElementById("histogram-btn").classList.remove("active-btn")
+                document.getElementById("scatterplot-btn").classList.remove("active-btn")
+                document.getElementById("line-btn").classList.remove("active-btn")
             } else {
                 choroplethShow.style.visibility = "hidden"
                 scatterplotShow.style.visibility = "visible"
+
+                document.getElementById("scatterplot-btn").classList.add("active-btn")
+                document.getElementById("choropleth-btn").classList.remove("active-btn")
             }
         }
         else {
@@ -157,9 +186,16 @@
                 histogramShow.style.visibility = "hidden"
                 lineShow.style.visibility = "hidden"
                 choroplethShow.style.visibility = "hidden"
+
+                document.getElementById("scatterplot-btn").classList.add("active-btn")
+                document.getElementById("histogram-btn").classList.remove("active-btn")
+                document.getElementById("choropleth-btn").classList.remove("active-btn")
+                document.getElementById("line-btn").classList.remove("active-btn")
             } else {
                 scatterplotShow.style.visibility = "hidden"
                 scatterplotShow.style.visibility = "visible"
+
+                document.getElementById("scatterplot-btn").classList.add("active-btn")
             }
         }
     }
@@ -178,12 +214,25 @@
         margin: 10px;
         border-radius: 10px;
         border: transparent;
-        font-size: 20px
+        font-size: 20px;
+        background-color: lightgray
     }
 
     button:hover {
-        background-color: lightgray
+        background-color: gray;
+        color: white
     }
+
+    .active-btn {
+        background-color: #666699;
+        color: white
+    }
+
+    .active-btn:hover {
+        background-color: #D2CFFF;
+        color: black;
+    }
+
     .graph-view {
         position: absolute;
         top: 100px;
@@ -192,11 +241,11 @@
     }
 
     .scrollbox {
-        height: 400px;
+        height: 350px;
         overflow-y: auto;
         border: 1px solid #ccc;
         padding: 10px;
-        width: 300px;
+        width: 200px;
         text-align: left;
     }
 
@@ -207,9 +256,10 @@
         background: #fff;
         box-shadow: 3px 3px 3px 0px rgb(92 92 92 / 0.5);
         border: 1px solid #ddd;
+        border-radius: 5px;
         font-size: 14px;
         font-weight: 500;
-        padding: 8px;
+        padding: 10px;
         color: #333;
     }
 
@@ -217,6 +267,7 @@
         color: #000;
         font-size: 16px;
         font-weight: 600;
+        padding-bottom: 10px
     }
 
     #tooltip ul {

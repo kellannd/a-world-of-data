@@ -3,7 +3,7 @@ class Scatterplot {
     this.config = {
       parentElement: _config.parentElement,
       containerWidth: _config.containerWidth || 1000,
-      containerHeight: _config.containerHeight || 550,
+      containerHeight: _config.containerHeight || 600,
       margin: _config.margin || { top: 80, right: 20, bottom: 50, left: 50 },
       tooltipPadding: _config.tooltipPadding || 15
     };
@@ -155,10 +155,10 @@ vis.legendItems = vis.legend.selectAll(".legend-item")
             .style('top', (event.pageY + vis.config.tooltipPadding) + 'px')
             .html(`
               <div class="tooltip-title">${d.Entity}</div>
-              <ul>
-                <li>HRI: ${d.hri}</li>
-                <li>SR: ${d.rate}</li>
-              </ul>
+
+                <p>Human Rights Index: ${d.hri.toFixed(2)}</p>
+                <p>Sucide Rate: ${d.rate.toFixed(2)}</p>
+
             `);
         })
         .on('mouseleave', () => {

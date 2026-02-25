@@ -2,9 +2,9 @@ class Choropleth {
   constructor(_config, _data, _choroplethType) {
     this.config = {
       parentElement: _config.parentElement,
-      containerWidth: _config.containerWidth || 675,
+      containerWidth: _config.containerWidth || 700,
       containerHeight: _config.containerHeight || 600,
-      margin: _config.margin || { top: 50, right: 20, bottom: 20, left: 35 },
+      margin: _config.margin || { top: 50, right: 20, bottom: 20, left: 0 },
       tooltipPadding: _config.tooltipPadding || 15,
       legendBottom: 200,
       legendLeft: 20,
@@ -60,7 +60,7 @@ class Choropleth {
     vis.chart.attr("clip-path", "url(#map-clip)");
     vis.colorScale = d3
       .scaleLinear()
-      .range(["#ffe4e1", "#8b0000"])
+      .range(["#FFF7FF", "#41407E"])
       .interpolate(d3.interpolateHcl);
 
     vis.linearGradient = vis.svg
@@ -135,8 +135,8 @@ class Choropleth {
       vis.colorScale.domain([0, d3.max(Array.from(valueMap.values()))]);
 
       vis.legendStops = [
-        { color: "#ffe4e1", value: 0, offset: 0 },
-        { color: "#8b0000", value: 1, offset: 100 },
+        { color: "#FFF7FF", value: 0, offset: 0 },
+        { color: "#41407E", value: 1, offset: 100 },
       ];
 
       vis.chart
@@ -148,7 +148,7 @@ class Choropleth {
           const value = valueMap.get(d.id);
           return value ? vis.colorScale(value) : "#eee";
         })
-        .attr("stroke", "#999")
+        .attr("stroke", "#808080")
         .attr("stroke-width", 0.5)
 
         .on("mouseover", (event, d) => {
@@ -158,7 +158,7 @@ class Choropleth {
             .style("left", event.pageX + vis.config.tooltipPadding + "px")
             .style("top", event.pageY + vis.config.tooltipPadding + "px").html(`
               <div class="tooltip-title">${d.properties.name}</div>
-                <p>HRI: ${d.hri.toFixed(2)}</p>
+                <p>Human Rights Index: ${d.hri.toFixed(2)}</p>
             `);
         })
         .on("mouseleave", () => {
@@ -170,12 +170,12 @@ class Choropleth {
 
       vis.legendStops = [
         {
-          color: "#ffe4e1",
+          color: "#FFF7FF",
           value: d3.min(Array.from(valueMap.values())),
           offset: 0,
         },
         {
-          color: "#8b0000",
+          color: "#41407E",
           value: d3.max(Array.from(valueMap.values())),
           offset: 100,
         },
@@ -191,7 +191,7 @@ class Choropleth {
           return value ? vis.colorScale(value) : "#eee";
           console.log(d);
         })
-        .attr("stroke", "#999")
+        .attr("stroke", "#808080")
         .attr("stroke-width", 0.5)
 
         .on("mouseover", (event, d) => {
@@ -201,7 +201,7 @@ class Choropleth {
             .style("left", event.pageX + vis.config.tooltipPadding + "px")
             .style("top", event.pageY + vis.config.tooltipPadding + "px").html(`
               <div class="tooltip-title">${d.properties.name}</div>
-                <p>SR: ${d.sr.toFixed(2)}</lp>
+                <p>Suicide Rate: ${d.sr.toFixed(2)}</lp>
             `);
         })
         .on("mouseleave", () => {
