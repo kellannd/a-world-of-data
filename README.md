@@ -87,3 +87,4 @@ The colors for the graphs were mostly taken from [Color Brewer](https://colorbre
 The biggest thing that I wanted to include, but ran out of time to, was "country isolation" or brushing where you could, for instance, select some points on the scatterplot with a brush and those specific points would be highlighted on other graphs. I think this would have been a good way to connect across different graphs. I also wish that I would have somehow found a way to have a good dashboard instead of the scatterplot being the main page. In the future, I will take some more time in the design and sketching phase to find a good way to have as much information as possible on the main page.
 
 ## Collaboration
+I found the website [D3 Graph Gallery](https://d3-graph-gallery.com/index.html) to be a really good resource in seeing graph examples with code.
