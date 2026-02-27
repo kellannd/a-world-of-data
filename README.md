@@ -1,4 +1,4 @@
-Video:
+[Video](https://drive.google.com/file/d/149-S9WkJF2YpLOodQZCD6fAEWQ9-y_Bk/view?usp=sharing)
 
 [Website Link](https://a-world-of-data.netlify.app/)
 
@@ -17,6 +17,10 @@ This is a dataset of the suicide rate per 100,000 peopel by country from the yea
 Because I had a much smaller window of years to work with in my second dataset, the graphs made only range from the years 2000 to 2021 for this project.
 
 ## Sketches
+I planned originally on trying to have some kind of dashboard, but the graphs were all so small and hard to read that it felt like all the information got lost. The choropleth graphs could not get much smaller without being difficult to navigate, and the scatterplot and line graphs took up too much space to make smaller. I settled on having tabs for each of the graphs and having two of the same graph, one for each attribute, when applicable, and making the year drop down change the graphs across all pages.
+
+Sketches (ended up being scrapped):
+<img src="/screenshots/sketch.png" height="500"/>
 
 ## Visualization
 The main view that the UI opens to is the scatterplot that compares the rate of suicide by the HRI. At the top, there are three other pages you can look at: histogram, choropleth, and line graph. There is also a drop down to select a year, which effects the scatterplot, histogram, and choropleth. If you change the year, all five of these graphs will update to the data from that year. Note that the year dropdown does not effect the line graphs as they are already shown over time.
@@ -80,5 +84,6 @@ The only library I used for this project was D3 v6 and seperated the js into dif
 The colors for the graphs were mostly taken from [Color Brewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3).
 
 ## Challenges and Future Work
+The biggest thing that I wanted to include, but ran out of time to, was "country isolation" or brushing where you could, for instance, select some points on the scatterplot with a brush and those specific points would be highlighted on other graphs. I think this would have been a good way to connect across different graphs. I also wish that I would have somehow found a way to have a good dashboard instead of the scatterplot being the main page. In the future, I will take some more time in the design and sketching phase to find a good way to have as much information as possible on the main page.
 
 ## Collaboration
