@@ -21,7 +21,7 @@ Because I had a much smaller window of years to work with in my second dataset, 
 ## Visualization
 The main view that the UI opens to is the scatterplot that compares the rate of suicide by the HRI. At the top, there are three other pages you can look at: histogram, choropleth, and line graph. There is also a drop down to select a year, which effects the scatterplot, histogram, and choropleth. If you change the year, all five of these graphs will update to the data from that year.
 
-<img src="/screenshots/img2.png" width="100" height="100"/>
+<img src="/screenshots/img2.png" height="500"/>
 
 
 ## Findings
